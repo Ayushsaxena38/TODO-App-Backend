@@ -12,16 +12,66 @@ body{
     display:flex;
     overflow: hidden;
     justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    width:100%;
+    /* border:2px solid blanchedalmond; */
+  }
+  #ctn-for-input #abc{
+    width : 100%;
+    /* border:2px solid blanchedalmond; */
+  }
+  #cat-date{
+    display:flex;
+    justify-content: center;
     align-items: center;
+    /* border:2px solid blue; */
+    height:100%;
   }
-  /* ------------------------plus icon of Input Element----------------------------- */
-  #plus-sign{
-    margin-left:-2rem;
+  #cat , #date {
+    width : 50%;
   }
-  /* ------------------------styles on image under plus-sign------------------------ */
-  #image-plus{
-    height:1.5rem;
-    width:1.5rem;
+  #cat select{
+    width: 100%;
+      outline: none;
+      font-size: 15px;
+      padding: 11px;
+      border: 1px solid #f3f3f3;
+      margin-bottom: 3px;
+      background-color: lightblue;
+      border-radius: 5px;
+    
+  }
+  #date input{
+      width: 100%;
+      outline: none;
+      font-size: 15px;
+      padding: 11px;
+      /* border: 1px solid #f3f3f3; */
+      margin-bottom: 3px;
+      background-color: lightblue;
+      border-radius: 5px;
+      border:none;
+
+  }
+  
+  #add-btn{
+    background-color: lightseagreen;
+    color:whitesmoke;
+    padding:10px;
+    border-color: lightseagreen;
+    font-weight: 800;
+  }
+  
+  #delete-btn{
+    background-color: lightcoral;
+    color:whitesmoke;
+    padding:10px;
+    border-color: lightcoral;
+    font-weight: 800;
+  }
+  form{
+    text-align: center;
   }
   /* ----------------------------Container for cnt Div----------------------------- */
   #container {
@@ -38,13 +88,27 @@ body{
     width: 500px;
     margin: auto;
   }
-  
+
+  #type{
+    background-color: royalblue;
+    border:none;
+    color:white;
+  }
+  #name-dis{
+    display: flex;
+    flex-direction: column;
+    border:2px solid blanchedalmond;
+  }
+  i{
+    padding : 5px;
+  }
   /* ---------------------------Styles on Tasks List--------------------------- */
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     border: 1px solid #e5e5e5;
+    background-color: burlywood ;
   }
   /* -----------------------------Styles on List Items-------------------------- */
   ul li {
@@ -58,6 +122,16 @@ body{
     border: 1px solid #f3f3f3;
     border-radius: 5px;
   
+  }
+  ul li p {
+    color:#0079bf;
+    /* background-color:lightblue; */
+    font-weight: 300;
+    font-size: small;
+  }
+  ul li label{
+    color:#0079bf;
+    font-weight: 600;
   }
   ul li:hover {
     background: lightcyan;
@@ -139,38 +213,11 @@ body{
   }
   /* -------------------------------- Styles on Conter for Tasks ------------------------------------- */
   #total-tasks {
-    margin-bottom: 20px;
-    font-size: 13px;
-      margin-left: 2px;
-      color: gray;
+      margin: 4px;
+      font-size: medium;
+      background-color: cornflowerblue;
+      color: whitesmoke;
   }
-  
-  
-  /* ------------------------Notification--------------------- */
-  
-  
-  #notify{
-     position:fixed;
-     top:20px;
-     width:100vw;
-     
-  }
-  .notification-container{
-    /* height:100px; */
-     width: 0px;
-    background-color: blue;
-    margin:0 auto;
-    display:none;
-   opacity: 0.6;
-   border-radius: 2rem;
-   text-align: center;
-   padding:1rem;
-   color:white;
-   transition: all 300ms linear;
-  }
-  
-  
-  
   
   
   /* -----------------media tag--------------- */

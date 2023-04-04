@@ -1,22 +1,29 @@
 // Variables----------------------------------------------------------------------------
+/*
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 const taskList = document.getElementById('list');
 const addTaskInput = document.getElementById('add');
 const tasksCounter = document.getElementById('tasks-counter');
 let plus = document.getElementById('image-plus');
 let notifi = document.querySelector('.notification-container');
+*/
 
 // functions-----------------------------------------------------------------------
 
 // when load the app first render list
+/*
 renderList();
+*/
 
 // After EveryTime add a task or delete a task or complete a task, Fist Save Tasks into localstorage
+/*
 function saveTodo(){
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
+*/
 
 // When you Add a task or Delete a task, To Display it on list we need this function
+/*
 function addTaskToDisplay(task){
     const li = document.createElement('li');
     li.innerHTML = `
@@ -26,8 +33,10 @@ function addTaskToDisplay(task){
     `;
     taskList.append(li);
 }
+*/
 
 // Render List is used to Update the List of Tasks
+/*
 function renderList () {
     taskList.innerHTML = "";
     
@@ -37,8 +46,10 @@ function renderList () {
     saveTodo();
     tasksCounter.innerHTML = tasks.length;
 }
+*/
 
 // toggel task is used to change the status of task
+/*
 function toggleTask (taskId) {
     const task = tasks.filter((task) => {
     if(task.id ==taskId){
@@ -54,8 +65,10 @@ function toggleTask (taskId) {
     }
     showNotification("task is not exist");
 }
+*/
 
 // To Delete a task
+/*
 function deleteTask (taskId) {
     let newTasks = tasks.filter(function(task) {
         return task.id !== taskId;
@@ -63,8 +76,10 @@ function deleteTask (taskId) {
     tasks = newTasks;
     renderList();
 }
+*/
 
 // To Add a Task
+/*
 function addTask (task) {
 
     if(task){
@@ -78,8 +93,10 @@ function addTask (task) {
     showNotification("This Task Cannot Be Added")
     
 }
+*/
 
 // To Show a Notification
+/*
 function showNotification(text) {
     notifi.innerText = text;
     notifi.style.display = "block";
@@ -92,7 +109,9 @@ function showNotification(text) {
 
 
 }
+*/
 // Add a task when press Enter on keyboard
+/*
 function handleInputKeypress(event){
     if(event.key === "Enter"){
         const text = event.target.value;
@@ -112,8 +131,10 @@ function handleInputKeypress(event){
         addTask(task);
     }
 }
+*/
 
 // Handle all the click events on Document
+/*
 function handleEvent(event){
     let trgt = event.target;
     if(trgt == plus){
@@ -142,8 +163,13 @@ function handleEvent(event){
         toggleTask(taskId);
     }
 }
+*/
 
 //Event Listener on Document
+/*
 document.addEventListener('click',handleEvent);
+*/
 //Event Listener on Input Element
+/*
 addTaskInput.addEventListener('keyup',handleInputKeypress);
+*/

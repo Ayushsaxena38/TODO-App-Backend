@@ -1,35 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO APP</title>
-    <link rel="stylesheet" href="/css/Styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/Styles.css" />
+    <script
+      src="https://kit.fontawesome.com/2b9cdc1c9a.js"
+      crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
     <div id="container">
-        <div id="cnt"><h1>Todo List App</h1>
-
+      <div id="cnt">
+        <h1>Todo List App</h1>
+<!------------------------------ form container for adding a task ----------------------------------->
         <div id="ctn-for-input">
-          <input placeholder="✍Add a task" class="add-task" id="add" />
-          <div id = "image-container"><span  id = "plus-sign"><img id = "image-plus" src="./images/add.png" alt=""></span></div>
+          <form action="/add" method="post">
+            <div id="abc">
+              <input
+                placeholder="✍Add a task"
+                name="name"
+                class="add-task"
+                id="add"
+                required
+              />
+            </div>
+
+            <div id="cat-date">
+              <div id="cat">
+                <select required name="categorie">
+                  <option value="" disabled selected>select a category</option>
+                  <option value="Personal">Personal</option>
+                  <option value="Work">Work</option>
+                  <option value="School">School</option>
+                </select>
+              </div>
+              <div id="date">
+                <input type="date" name="duedate" required />
+              </div>
+            </div>
+
+            <button id="add-btn" type="submit">
+              <span>&#43;Add Task</span>
+            </button>
+          </form>
         </div>
-         
-        <span id="total-tasks">Total tasks: <span id="tasks-counter">0</span></span>
-        <ul id="list">
-    
-        </ul>
+<!------------------------------ form for showing the list and delete task(s) ----------------------------------->
+        <form action="/delete-ids" method="post">
+          <div id="total-tasks">Total tasks: <%= taskList.length %></div>
+<!------------------------------ unordered list for showing the list/tasks ----------------------------------->
+          <ul id="list">
+            <%for(let i = 0 ; i < taskList.length; i++){ %>
+            <li>
+              <input
+                type="checkbox"
+                id="<%= taskList[i]._id %>"
+                name="ids"
+                value="<%= taskList[i]._id %>"
+                class="custom-checkbox"
+              />
+
+              <label for="<%= taskList[i]._id %>"><%=taskList[i].name%></label>
+              <p>
+                <i class="fa-solid fa-calendar-xmark"></i><%=
+                (taskList[i].dueDate).toString().substring(4,15) %>
+              </p>
+
+              <button id="type"><%= taskList[i].categorie %></button>
+            </li>
+            <% }%>
+          </ul>
+          <% if(taskList.length != 0){ %>
+          <button id="delete-btn" type="submit">delete tasks</button>
+          <% }%>
+        </form>
       </div>
-      
-        
     </div>
-    <div id = "notify">
-        <div class="notification-container">
-        
-        </div>
-    </div>
-      
+
     <script src="/js/js.js"></script>
-</body>
+  </body>
 </html>
